@@ -2,6 +2,7 @@ package fr.unilim.iut.spaceinvaders.moteurjeu;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.security.Key;
 
 /**
  * classe qui represente un controleur en lien avec un KeyListener
@@ -70,6 +71,13 @@ public class Controleur implements KeyListener {
 			break;
 		}
 		
+		switch(e.getKeyCode()){
+			case KeyEvent.VK_SPACE:
+				this.commandeEnCours.tir=true;
+				this.commandeARetourner.tir=true;
+				break;
+		}
+		
 	}
 
 	public void keyReleased(KeyEvent e) {
@@ -85,6 +93,11 @@ public class Controleur implements KeyListener {
 			break;
 		case 's':
 			this.commandeEnCours.bas = false;
+			break;
+		}
+		switch (e.getKeyCode()){
+		case KeyEvent.VK_ESCAPE:
+			this.commandeEnCours.tir=false;
 			break;
 		}
 
