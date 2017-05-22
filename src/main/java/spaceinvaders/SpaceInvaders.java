@@ -122,6 +122,10 @@ public class SpaceInvaders implements Jeu {
 	public Vaisseau recupererVaisseau() {
 		return this.vaisseau;
 	}
+	
+	public Envahisseur recupererEnvahisseur() {
+		return this.envahisseur;
+	}
 
 	public void evoluer(Commande commandeUser) {
 		
