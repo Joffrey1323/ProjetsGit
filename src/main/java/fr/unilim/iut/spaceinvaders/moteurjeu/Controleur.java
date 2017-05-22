@@ -95,11 +95,12 @@ public class Controleur implements KeyListener {
 			this.commandeEnCours.bas = false;
 			break;
 		}
-		switch (e.getKeyCode()){
-		case KeyEvent.VK_ESCAPE:
+		switch(e.getKeyCode()){
+		case KeyEvent.VK_SPACE:
 			this.commandeEnCours.tir=false;
+			this.commandeARetourner.tir=false;
 			break;
-		}
+	}
 
 		
 	}
