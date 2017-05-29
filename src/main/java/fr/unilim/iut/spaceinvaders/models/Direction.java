@@ -1,10 +1,10 @@
-package spaceinvaders;
+package fr.unilim.iut.spaceinvaders.models;
 
 public enum Direction {
 	  
     HAUT (1),
     BAS (-1),
-    GAUCHE (-1),
+    GAUCHE (-2),
     DROITE (1),
  
     HAUT_ECRAN(-1),
@@ -18,6 +18,6 @@ public enum Direction {
 
   public int valeur() {
 	  return this.valeur;
- }
+  }
 
 }

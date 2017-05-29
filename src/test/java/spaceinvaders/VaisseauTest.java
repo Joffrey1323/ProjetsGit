@@ -4,9 +4,9 @@ package spaceinvaders;
 
 import org.junit.Test;
 
-import spaceinvaders.Dimension;
-import spaceinvaders.Position;
-import spaceinvaders.Vaisseau;
+import fr.unilim.iut.spaceinvaders.models.Dimension;
+import fr.unilim.iut.spaceinvaders.models.Position;
+import fr.unilim.iut.spaceinvaders.models.Vaisseau;
 import fr.unilim.iut.spaceinvaders.utils.MissileException;
 
 public class VaisseauTest {

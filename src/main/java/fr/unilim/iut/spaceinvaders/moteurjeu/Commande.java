@@ -16,6 +16,8 @@ public class Commande {
 	public boolean haut;
 	public boolean bas;
 	public boolean tir;
+	public boolean envaDroite;
+	public boolean envaGauche;
 
 	public Commande()
 	{
@@ -34,6 +36,8 @@ public class Commande {
 		this.gauche=commandeACopier.gauche;
 		this.droite=commandeACopier.droite;	
 		this.tir=commandeACopier.tir;
+		this.envaDroite=commandeACopier.envaDroite;
+		this.envaGauche=commandeACopier.envaGauche;
 	}
 	
 }

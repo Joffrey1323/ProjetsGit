@@ -69,6 +69,14 @@ public class Controleur implements KeyListener {
 			this.commandeEnCours.bas = true;
 			this.commandeARetourner.bas = true;
 			break;
+		case 'a':
+			this.commandeEnCours.envaGauche = true;
+			this.commandeARetourner.envaGauche = true;
+			break;
+		case 'e':
+			this.commandeEnCours.envaDroite= true;
+			this.commandeARetourner.envaDroite = true;
+			break;
 		}
 		
 		switch(e.getKeyCode()){
@@ -93,6 +101,14 @@ public class Controleur implements KeyListener {
 			break;
 		case 's':
 			this.commandeEnCours.bas = false;
+			break;
+		case 'a':
+			this.commandeEnCours.envaGauche = false;
+			this.commandeARetourner.envaGauche = false;
+			break;
+		case 'e':
+			this.commandeEnCours.envaDroite= false;
+			this.commandeARetourner.envaDroite = false;
 			break;
 		}
 		switch(e.getKeyCode()){

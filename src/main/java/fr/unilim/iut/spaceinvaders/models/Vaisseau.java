@@ -1,4 +1,4 @@
-package spaceinvaders;
+package fr.unilim.iut.spaceinvaders.models;
 
 public class Vaisseau extends Sprite {
     
