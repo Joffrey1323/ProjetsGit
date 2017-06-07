@@ -1,12 +1,14 @@
 package fr.unilim.iut.spaceinvaders.models;
 
+import javax.swing.JOptionPane;
+
 import fr.unilim.iut.spaceinvaders.moteurjeu.Commande;
 import fr.unilim.iut.spaceinvaders.moteurjeu.Jeu;
 import fr.unilim.iut.spaceinvaders.utils.DebordementEspaceJeuException;
 import fr.unilim.iut.spaceinvaders.utils.HorsEspaceJeuException;
 import fr.unilim.iut.spaceinvaders.utils.MissileException;
 
-public class SpaceInvaders implements Jeu {
+public class SpaceInvaders extends Collision implements Jeu {
 	int longueur;
 	int hauteur;
 	Vaisseau vaisseau;
@@ -185,7 +187,9 @@ public class SpaceInvaders implements Jeu {
 
 	public void evoluer(Commande commandeUser) {
 		
-		deplacerEnvahisseurDansLeSens();
+		if(this.aUnEnvahisseur()){
+				deplacerEnvahisseurDansLeSens();
+		}
 		if (commandeUser.gauche) {
 			deplacerVaisseauVersLaGauche();
 		}
@@ -195,9 +199,14 @@ public class SpaceInvaders implements Jeu {
 		}
 		if(this.aUnMissile()){
 		    deplacerMissile();
+		if(!this.aUnEnvahisseur() && !this.aUnMissile()){
+		    	JOptionPane jopFinDePartie= new JOptionPane();
+				jopFinDePartie.showMessageDialog(null, "Vous avez gagné !", "Fin de partie", JOptionPane.INFORMATION_MESSAGE);
+		}
 		}
 		if (commandeUser.tir && !this.aUnMissile()){
 			tirerUnMissile(new Dimension(Constante.MISSILE_LONGUEUR, Constante.MISSILE_HAUTEUR),Constante.MISSILE_VITESSE);
+
 		}
 	}
 
@@ -223,6 +232,11 @@ public class SpaceInvaders implements Jeu {
 		
 		if(!estDansEspaceJeu(missile.abscisseLaPlusAGauche(), missile.ordonneeLaPlusHaute())){
 			this.missile=null;
+			
+		}
+		if(this.aUnMissile() && this.aUnEnvahisseur() && detecterCollision(missile, envahisseur)){
+			this.envahisseur=null;
+			
 			
 		}
 		

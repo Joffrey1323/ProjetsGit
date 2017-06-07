@@ -4,7 +4,7 @@ public enum Direction {
 	  
     HAUT (1),
     BAS (-1),
-    GAUCHE (-2),
+    GAUCHE (-1),
     DROITE (1),
  
     HAUT_ECRAN(-1),

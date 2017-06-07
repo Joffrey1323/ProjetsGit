@@ -15,16 +15,16 @@ public class DessinSpaceInvaders implements DessinJeu {
 	}
 
 	public void dessiner(BufferedImage im) {
+		Missile missile= this.jeu.recupererUnMissile();
+		Envahisseur envahisseur= this.jeu.recupererEnvahisseur();
 		if (this.jeu.aUnVaisseau()) {
 			Vaisseau vaisseau = this.jeu.recupererVaisseau();
 			this.dessinerUnVaisseau(vaisseau, im);
 		}
 		if (this.jeu.aUnMissile()) {
-			Missile missile= this.jeu.recupererUnMissile();
 			this.dessinerUnMissile(missile, im);
 		}
 		if (this.jeu.aUnEnvahisseur()) {
-			Envahisseur envahisseur= this.jeu.recupererEnvahisseur();
 			this.dessinerUnEnvahisseur(envahisseur, im);
 		}
 	}

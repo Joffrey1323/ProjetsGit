@@ -419,12 +419,12 @@ public class SpaceInvadersTest {
 	   @Test
 	    public void test_EnvahisseurAvance_DeplacerEnvahisseurVersLaGauche() {
 
-	       spaceinvaders.positionnerUnNouvelEnvahisseur(new Dimension(3,2),new Position(9,1), 3);
+	       spaceinvaders.positionnerUnNouvelEnvahisseur(new Dimension(3,2),new Position(12,1), 2);
 	       spaceinvaders.deplacerEnvahisseurVersLaGauche();
 
 	       assertEquals("" + 
-	       "......EEE......\n" + 
-	       "......EEE......\n" +
+	       "..........EEE..\n" + 
+	       "..........EEE..\n" +
 	       "...............\n" + 
 	       "...............\n" + 
 	       "...............\n" + 
@@ -459,8 +459,8 @@ public class SpaceInvadersTest {
 		   spaceinvaders.positionnerUnNouvelEnvahisseur(new Dimension(3,2),new Position(12,1),5);
 	       spaceinvaders.deplacerEnvahisseurVersLaDroite();
 	       assertEquals("" + 
-	       "............EEE\n" + 
-	       "............EEE\n" +
+	       ".......EEE.....\n" + 
+	       ".......EEE.....\n" +
 	       "...............\n" + 
 	       "...............\n" + 
 	       "...............\n" + 
@@ -474,12 +474,12 @@ public class SpaceInvadersTest {
 	@Test
 	    public void test_EnvahisseurAvanceAvecVitesse_DeplacerEnvahisseurVersLaGauche() {
 
-	       spaceinvaders.positionnerUnNouvelEnvahisseur(new Dimension(3,2),new Position(7,1),5);
+	       spaceinvaders.positionnerUnNouvelEnvahisseur(new Dimension(3,2),new Position(8,1),0);
 	       spaceinvaders.deplacerEnvahisseurVersLaGauche();
 
 	       assertEquals("" + 
-	       "..EEE..........\n" + 
-	       "..EEE..........\n" +
+	       "........EEE....\n" + 
+	       "........EEE....\n" +
 	       "...............\n" + 
 	       "...............\n" + 
 	       "...............\n" + 
@@ -529,7 +529,7 @@ public class SpaceInvadersTest {
 	   @Test
 	    public void test_EnvahisseurAvancePartiellement_DeplacerEnvahisseurVersLaDroite() {
 
-	       spaceinvaders.positionnerUnNouvelEnvahisseur(new Dimension(3,2),new Position(12,1),5);
+	       spaceinvaders.positionnerUnNouvelEnvahisseur(new Dimension(3,2),new Position(12,1),0);
 	       spaceinvaders.deplacerEnvahisseurVersLaDroite();
 	       assertEquals("" + 
 	       "............EEE\n" + 

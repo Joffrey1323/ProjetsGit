@@ -6,6 +6,9 @@ public abstract class Sprite {
 	protected Dimension dimension;
 	protected int vitesse;
 	
+	Missile missile;
+	Envahisseur envahisseur;
+	
 	
 	public Sprite(Dimension dimension, Position origine, int vitesse) {
 		super();
@@ -22,11 +25,11 @@ public abstract class Sprite {
 	    return estAbscisseCouverte(x) && estOrdonneeCouverte(y);
 	}
 
-	private boolean estOrdonneeCouverte(int y) {
+	boolean estOrdonneeCouverte(int y) {
 	   return (ordonneeLaPlusBasse() <= y) && (y <= ordonneeLaPlusHaute());
 	}
 
-	private boolean estAbscisseCouverte(int x) {
+	boolean estAbscisseCouverte(int x) {
 	   return (abscisseLaPlusAGauche() <= x) && (x <= abscisseLaPlusADroite());
 	}
 
@@ -65,6 +68,7 @@ public abstract class Sprite {
 	 public void deplacerHorizontalementVers(Direction direction) {
 		this.origine.changerAbscisse(this.origine.abscisse() + direction.valeur()*vitesse);
 	}
+
 	
 
 }
