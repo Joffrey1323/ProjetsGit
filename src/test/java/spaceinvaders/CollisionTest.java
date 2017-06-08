@@ -19,6 +19,8 @@ public class CollisionTest {
 	    spaceinvaders = new SpaceInvaders(15, 10);
 	   }
 	   
+	  // A defaut d'avoir trouver des tests efficases, nous avons laisser ces tests qui ne sont pas efficases afin d'éviter de passer
+	  // trop de temps sur cette étape
 	   @Test
 	    public void test_CollisionEntreMissileEtEnvahisseurParLeBas(){
 
