@@ -154,11 +154,11 @@ public class SpaceInvaders extends Collision implements Jeu {
 		
 	}
 	
-	public void deplacerEnvahisseurDansLeSens() {
-		if (envahisseur.abscisseLaPlusADroite() == Constante.ESPACEJEU_LONGUEUR - 1) {
+	public void deplacerEnvahisseurDansUnSens() {
+		if (envahisseurToucheLeBordDroitDuPlateau()) {
 			this.envahisseur.sens = Direction.GAUCHE;
 		}
-		if (envahisseur.abscisseLaPlusAGauche() == 0) {
+		if (envahisseurToucheLeBordGaucheDuPlateau()) {
 			this.envahisseur.sens = Direction.DROITE;
 		}
 		if (envahisseur.sens == Direction.GAUCHE) {
@@ -166,6 +166,14 @@ public class SpaceInvaders extends Collision implements Jeu {
 		} else {
 			this.deplacerEnvahisseurVersLaDroite();
 		}
+	}
+
+	public boolean envahisseurToucheLeBordGaucheDuPlateau() {
+		return envahisseur.abscisseLaPlusAGauche() == 0;
+	}
+
+	public boolean envahisseurToucheLeBordDroitDuPlateau() {
+		return envahisseur.abscisseLaPlusADroite() == Constante.ESPACEJEU_LONGUEUR - 1;
 	}
 
 	public void deplacerEnvahisseurVersLaGauche() {
@@ -188,7 +196,7 @@ public class SpaceInvaders extends Collision implements Jeu {
 	public void evoluer(Commande commandeUser) {
 		
 		if(this.aUnEnvahisseur()){
-				deplacerEnvahisseurDansLeSens();
+				deplacerEnvahisseurDansUnSens();
 		}
 		if (commandeUser.gauche) {
 			deplacerVaisseauVersLaGauche();
@@ -202,6 +210,7 @@ public class SpaceInvaders extends Collision implements Jeu {
 		if(!this.aUnEnvahisseur() && !this.aUnMissile()){
 		    	JOptionPane jopFinDePartie= new JOptionPane();
 				jopFinDePartie.showMessageDialog(null, "Vous avez gagné !", "Fin de partie", JOptionPane.INFORMATION_MESSAGE);
+				System.exit(0);
 		}
 		}
 		if (commandeUser.tir && !this.aUnMissile()){

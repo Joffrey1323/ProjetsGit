@@ -1,7 +1,5 @@
 package fr.unilim.iut.spaceinvaders.models;
 
-import fr.unilim.iut.spaceinvaders.moteurjeu.Jeu;
-
 public class Collision {
 
 	public Collision() {
@@ -21,7 +19,7 @@ public class Collision {
 	}
 
 	private boolean spriteEstComprisDansLIntervalleDOrdonneeDUnAutreSprite(Sprite sprite1, Sprite sprite2) {
-		return elementToucheParOrdonnee(sprite1, sprite2.ordonneeLaPlusBasse())
+		return elementToucheParOrdonnee(sprite1, sprite2.ordonneeLaPlusBasse()) 
 				|| elementToucheParOrdonnee(sprite1, sprite2.ordonneeLaPlusHaute());
 	}
 

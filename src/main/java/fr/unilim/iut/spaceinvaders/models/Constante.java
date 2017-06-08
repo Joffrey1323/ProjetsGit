@@ -9,7 +9,7 @@ public class Constante {
 	   public static final int VAISSEAU_HAUTEUR = 20;
 	   public static final int VAISSEAU_VITESSE = 10;
 	   
-	   public static final int ENVAHISSEUR_LONGUEUR =75;
+	   public static final int ENVAHISSEUR_LONGUEUR =40;
 	   public static final int ENVAHISSEUR_HAUTEUR = 15;
 	   public static final int ENVAHISSEUR_VITESSE = 20;
 	   
